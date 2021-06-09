@@ -58,8 +58,14 @@ export default class ShuffleSort extends Vue {
     { text: 9, color: '#6F98A8' },
   ];
 
+  // Fisher-Yates algorithm
   shuffle(): void {
-    this.items.sort(() => Math.random() - 0.5);
+    for (let i = 0; i < this.items.length - 1; i += 1) {
+      const j = i + Math.floor(Math.random() * (this.items.length - i));
+      const origin = this.items[i];
+      this.items[i] = this.items[j];
+      Vue.set(this.items, j, origin);
+    }
   }
 
   sort(): void {

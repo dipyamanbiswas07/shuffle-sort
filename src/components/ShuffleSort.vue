@@ -95,7 +95,7 @@ export default class ShuffleSort extends Vue {
 .color-white {
   color: white;
 }
-.color-white {
+.color-black {
   color: black;
 }
 </style>
